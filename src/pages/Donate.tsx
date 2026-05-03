@@ -16,23 +16,24 @@ const Donate: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    alert('Merci pour votre générosité ! (Simulation)');
+    alert(content.donate.thankYou);
   };
 
   return (
     <div className="py-5 lg:py-8 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-          <div className="space-y-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          <div className="space-y-10">
             <div className="space-y-6">
               <span className="flex items-center gap-2 text-rose-600 font-bold uppercase tracking-widest text-sm">
                 <Heart size={18} fill="currentColor" />
-                Impact Social
+                {content.donate.impactLabel}
               </span>
-              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-black text-blue-950 leading-tight">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-black text-blue-950 uppercase tracking-tighter">
                 {content.donate.title}
               </h1>
-              <p className="text-xl text-gray-600 leading-relaxed font-medium">
+              <div className="w-20 h-1 bg-emerald-500 rounded-full" />
+              <p className="text-lg lg:text-xl text-gray-600 leading-relaxed font-medium">
                 {content.donate.description}
               </p>
             </div>
@@ -40,16 +41,16 @@ const Donate: React.FC = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div className="bg-gray-50 p-8 rounded-3xl space-y-3">
                 <ShieldCheck className="text-emerald-600" size={32} />
-                <h4 className="font-bold text-blue-950">Fonds sécurisés</h4>
+                <h4 className="font-bold text-blue-950">{content.donate.secureTitle}</h4>
                 <p className="text-sm text-gray-500">
-                  Transparence totale sur l'utilisation de vos contributions.
+                  {content.donate.secureText}
                 </p>
               </div>
               <div className="bg-gray-50 p-8 rounded-3xl space-y-3">
                 <Zap className="text-amber-600" size={32} />
-                <h4 className="font-bold text-blue-950">Action rapide</h4>
+                <h4 className="font-bold text-blue-950">{content.donate.quickTitle}</h4>
                 <p className="text-sm text-gray-500">
-                  Déploiement immédiat de ressources pédagogiques critiques.
+                  {content.donate.quickText}
                 </p>
               </div>
             </div>

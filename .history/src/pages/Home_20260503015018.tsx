@@ -87,9 +87,9 @@ const Home: React.FC = () => {
                 <p className="mt-6 text-xl text-gray-600 max-w-2xl font-medium leading-relaxed">
                   {content.hero.subtitle}
                 </p>
-                <span className="inline-block px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 text-[12px] font-bold tracking-tight lowercase mb-4">
-                  {content.hero.motto}
-                </span>
+                 <span className="inline-block px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 text-[10px] font-bold tracking-tight lowercase mb-4">
+  {content.hero.motto}
+</span>
               </motion.div>
 
               <motion.div

@@ -51,7 +51,7 @@ const Navbar: React.FC = () => {
             <img 
                 src={`${import.meta.env.BASE_URL}assets/images/logo.png`} 
                 alt="Logo EduBuilders"
-                className="h-12 w-auto sm:h-15 md:h-15 lg:h-12 object-contain"
+                className="h-12 w-auto sm:h-16 md:h-12 lg:h-15 object-contain"
             />
             <span className="text-[10px] uppercase font-semibold text-gray-500 tracking-wider hidden sm:block">
               West Africa

@@ -590,7 +590,7 @@ export const translations: Record<Language, Content> = {
       notFound: "Article non trouvé",
       back: "Retour aux publications",
       share: "Partager",
-      editorialTitle: "eduBuilders Éditorial",
+      editorialTitle: "EduBuilders Éditorial",
       editorialBio: "Expertise en innovation et coopération éducative en Afrique de l'Ouest."
     },
     workingTogether: {
@@ -965,7 +965,7 @@ export const translations: Record<Language, Content> = {
       notFound: "Article not found",
       back: "Back to publications",
       share: "Share",
-      editorialTitle: "eduBuilders Editorial",
+      editorialTitle: "EduBuilders Editorial",
       editorialBio: "Expertise in innovation and educational cooperation in West Africa."
     },
     workingTogether: {

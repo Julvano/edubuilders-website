@@ -2,7 +2,7 @@
 import React from 'react';
 import { useLanguage } from '../components/LanguageContext';
 import { motion } from 'motion/react';
-import { CheckCircle2, FileText, UserCheck, CreditCard } from 'lucide-react';
+import { CheckCircle2, FileText, UserCheck, CreditCard, Link } from 'lucide-react';
 
 const Membership: React.FC = () => {
   const { content, language, langPath } = useLanguage();
@@ -85,8 +85,8 @@ const Membership: React.FC = () => {
                    </p>
                 </div>
 
-                <a 
-                  href={`/edubuilders-website/${language}/contact?subject=adhesion`}
+                <Link 
+                  href={langPath('/contact?subject=adhesion')}
                   className="inline-flex w-full bg-emerald-500 hover:bg-emerald-400 text-blue-950 font-black py-6 rounded-3xl transition-all uppercase tracking-widest shadow-2xl shadow-emerald-500/30 items-center justify-center gap-3 group px-8"
                 >
                   <span className="text-sm">{content.join.membershipCTA}</span>
@@ -96,7 +96,7 @@ const Membership: React.FC = () => {
                   >
                     <UserCheck size={24} />
                   </motion.div>
-                </a>
+                </Link>
              </div>
           </motion.div>
         </div>

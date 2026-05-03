@@ -527,7 +527,7 @@ export const translations: Record<Language, Content> = {
       explorer: "Explorer",
       jobsTitle: "Emploi, Stage et Volontariat",
       jobsText: "Recrutement régulier pour notre organe de soutien technique ou pour des stages d'appui à la recherche. Rejoignez une équipe passionnée.",
-      membershipTitle: "Devenire partenaire",
+      membershipTitle: "Adhérer",
       membershipText: "L'adhésion se fait par demande écrite soumise à l'approbation de la Direction Générale, accompagnée des frais d'adhésion requis.",
       membershipCTA: "Nous contacter pour soumettre votre demande d'adhésion",
       expertTitle: "Contribuer en tant qu'Expert",
@@ -559,7 +559,7 @@ export const translations: Record<Language, Content> = {
       phoneTitle: "Téléphone",
       phone: "+229 00 00 00 00",
       emailTitle: "Email",
-      email: "contact@edubuilders.org",
+      email: "contact@edubuilders.bj",
       formTitle: "Envoyez-nous un message",
       labelIdentity: "Nom et Prénom *",
       labelEmail: "Adresse email *",
@@ -590,12 +590,12 @@ export const translations: Record<Language, Content> = {
       notFound: "Article non trouvé",
       back: "Retour aux publications",
       share: "Partager",
-      editorialTitle: "eduBuilders Éditorial",
+      editorialTitle: "EduBuilders Éditorial",
       editorialBio: "Expertise en innovation et coopération éducative en Afrique de l'Ouest."
     },
     workingTogether: {
       membership: {
-        title: "Devenire partenaire",
+        title: "Adhérer",
         intro: "L'adhésion est un acte d'engagement pour l'avenir éducatif de l'Afrique de l'Ouest.",
         statutesTitle: "Conditions Statutaires (Art. 5)",
         statutesText: "L'adhésion nécessite une demande écrite soumise à l'approbation de la Direction Générale et le paiement du droit d'adhésion.",
@@ -680,7 +680,7 @@ export const translations: Record<Language, Content> = {
     nav: {
       home: "Home",
       about: "About",
-      actions: "Actions",
+      actions: "Actions & Expertise",
       partners: "Partners",
       publications: "Publications",
       join: "Work Together",
@@ -934,7 +934,7 @@ export const translations: Record<Language, Content> = {
       phoneTitle: "Phone",
       phone: "+229 00 00 00 00",
       emailTitle: "Email",
-      email: "contact@edubuilders.org",
+      email: "contact@edubuilders.bj",
       formTitle: "Send us a message",
       labelIdentity: "First & Last Name *",
       labelEmail: "Email Address *",
@@ -965,7 +965,7 @@ export const translations: Record<Language, Content> = {
       notFound: "Article not found",
       back: "Back to publications",
       share: "Share",
-      editorialTitle: "eduBuilders Editorial",
+      editorialTitle: "EduBuilders Editorial",
       editorialBio: "Expertise in innovation and educational cooperation in West Africa."
     },
     workingTogether: {

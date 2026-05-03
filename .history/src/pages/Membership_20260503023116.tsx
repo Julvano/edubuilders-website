@@ -86,7 +86,7 @@ const Membership: React.FC = () => {
                 </div>
 
                 <a 
-                  href={`/edubuilders-website/${language}/contact?subject=adhesion`}
+                  href={langPath('/contact?subject=adhesion')}
                   className="inline-flex w-full bg-emerald-500 hover:bg-emerald-400 text-blue-950 font-black py-6 rounded-3xl transition-all uppercase tracking-widest shadow-2xl shadow-emerald-500/30 items-center justify-center gap-3 group px-8"
                 >
                   <span className="text-sm">{content.join.membershipCTA}</span>

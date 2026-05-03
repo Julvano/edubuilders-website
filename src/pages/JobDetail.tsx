@@ -28,26 +28,50 @@ const JOBS_DATA: Record<string, any> = {
     location: { fr: "Abomey-Calavi / Hybride", en: "Abomey-Calavi / Hybrid" },
     contractType: { fr: "CDD (24 mois)", en: "Fixed-term (24 months)" },
     duration: { fr: "2 ans renouvelables", en: "2 years renewable" },
-    responsibilitiesHtml: `
-      <h2>Missions principales</h2>
-      <p>Sous la supervision du Directeur Général, l'expert sera chargé de :</p>
-      <ul>
-        <li>Concevoir et réviser les <strong>curricula de formation</strong> pour les centres d'excellence régionaux.</li>
-        <li>Développer des modules d'apprentissage hybrides (présentiel/numérique).</li>
-        <li>Former les formateurs aux nouvelles approches pédagogiques innovantes.</li>
-        <li>Évaluer l'impact des dispositifs de formation mis en œuvre.</li>
-      </ul>
-      <blockquote>L'innovation pédagogique est au cœur de notre stratégie de transformation des systèmes éducatifs.</blockquote>
-    `,
-    qualificationsHtml: `
-      <h2>Profil recherché</h2>
-      <ul>
-        <li>Master en Sciences de l'Éducation, Ingénierie de formation ou équivalent.</li>
-        <li>Au moins <strong>5 ans d'expérience</strong> dans la conception de programmes éducatifs en Afrique de l'Ouest.</li>
-        <li>Excellente maîtrise des outils de <em>Digital Learning</em> (LMS, outils auteur).</li>
-        <li>Capacité à travailler dans un environnement multiculturel et bilingue.</li>
-      </ul>
-    `
+    responsibilitiesHtml: {
+      fr: `
+        <h2>Missions principales</h2>
+        <p>Sous la supervision du Directeur Général, l'expert sera chargé de :</p>
+        <ul>
+          <li>Concevoir et réviser les <strong>curricula de formation</strong> pour les centres d'excellence régionaux.</li>
+          <li>Développer des modules d'apprentissage hybrides (présentiel/numérique).</li>
+          <li>Former les formateurs aux nouvelles approches pédagogiques innovantes.</li>
+          <li>Évaluer l'impact des dispositifs de formation mis en œuvre.</li>
+        </ul>
+        <blockquote>L'innovation pédagogique est au cœur de notre stratégie de transformation des systèmes éducatifs.</blockquote>
+      `,
+      en: `
+        <h2>Main Missions</h2>
+        <p>Under the supervision of the Director General, the expert will be responsible for:</p>
+        <ul>
+          <li>Designing and revising <strong>training curricula</strong> for regional centers of excellence.</li>
+          <li>Developing hybrid learning modules (face-to-face/digital).</li>
+          <li>Training trainers in new innovative pedagogical approaches.</li>
+          <li>Evaluating the impact of the implemented training systems.</li>
+        </ul>
+        <blockquote>Pedagogical innovation is at the heart of our strategy for transforming education systems.</blockquote>
+      `
+    },
+    qualificationsHtml: {
+      fr: `
+        <h2>Profil recherché</h2>
+        <ul>
+          <li>Master en Sciences de l'Éducation, Ingénierie de formation ou équivalent.</li>
+          <li>Au moins <strong>5 ans d'expérience</strong> dans la conception de programmes éducatifs en Afrique de l'Ouest.</li>
+          <li>Excellente maîtrise des outils de <em>Digital Learning</em> (LMS, outils auteur).</li>
+          <li>Capacité à travailler dans un environnement multiculturel et bilingue.</li>
+        </ul>
+      `,
+      en: `
+        <h2>Candidate Profile</h2>
+        <ul>
+          <li>Master's degree in Education Sciences, Training Engineering, or equivalent.</li>
+          <li>At least <strong>5 years of experience</strong> in designing educational programs in West Africa.</li>
+          <li>Excellent mastery of <em>Digital Learning</em> tools (LMS, authoring tools).</li>
+          <li>Ability to work in a multicultural and bilingual environment.</li>
+        </ul>
+      `
+    }
   },
   '2': {
     title: { 
@@ -60,37 +84,59 @@ const JOBS_DATA: Record<string, any> = {
     location: { fr: "Parakou, Bénin", en: "Parakou, Benin" },
     contractType: { fr: "Bénévolat", en: "Volunteering" },
     duration: { fr: "6 mois", en: "6 months" },
-    responsibilitiesHtml: `
-      <h2>Activités du volontaire</h2>
-      <p>Le volontaire appuiera l'équipe opérationnelle sur le terrain pour :</p>
-      <ul>
-        <li>Animer des ateliers de lecture et de calcul pour les jeunes vulnérables.</li>
-        <li>Soutenir la gestion administrative des centres de ressources locaux.</li>
-        <li>Contribuer à la collecte de données sur l'impact communautaire.</li>
-      </ul>
-    `,
-    qualificationsHtml: `
-      <h2>Critères d'éligibilité</h2>
-      <ul>
-        <li>Étudiant ou diplômé en sciences sociales ou éducation.</li>
-        <li>Forte motivation pour l'impact social et l'engagement communautaire.</li>
-        <li>Résidence souhaitée à Parakou ou environs.</li>
-      </ul>
-    `
+    responsibilitiesHtml: {
+      fr: `
+        <h2>Activités du volontaire</h2>
+        <p>Le volontaire appuiera l'équipe opérationnelle sur le terrain pour :</p>
+        <ul>
+          <li>Animer des ateliers de lecture et de calcul pour les jeunes vulnérables.</li>
+          <li>Soutenir la gestion administrative des centres de ressources locaux.</li>
+          <li>Contribuer à la collecte de données sur l'impact communautaire.</li>
+        </ul>
+      `,
+      en: `
+        <h2>Volunteer Activities</h2>
+        <p>The volunteer will support the operational team on the ground to:</p>
+        <ul>
+          <li>Facilitate reading and calculation workshops for vulnerable youth.</li>
+          <li>Support the administrative management of local resource centers.</li>
+          <li>Contribute to data collection on community impact.</li>
+        </ul>
+      `
+    },
+    qualificationsHtml: {
+      fr: `
+        <h2>Critères d'éligibilité</h2>
+        <ul>
+          <li>Étudiant ou diplômé en sciences sociales ou éducation.</li>
+          <li>Forte motivation pour l'impact social et l'engagement communautaire.</li>
+          <li>Résidence souhaitée à Parakou ou environs.</li>
+        </ul>
+      `,
+      en: `
+        <h2>Eligibility Criteria</h2>
+        <ul>
+          <li>Student or graduate in social sciences or education.</li>
+          <li>Strong motivation for social impact and community engagement.</li>
+          <li>Residence preferred in Parakou or surroundings.</li>
+        </ul>
+      `
+    }
   }
 };
 
 const JobDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const { language, content: t, langPath } = useLanguage();
+  const ct = t.workingTogether.careers;
   
   const job = id ? JOBS_DATA[id] : null;
 
   if (!job) {
     return (
       <div className="py-32 text-center">
-        <h2 className="text-3xl font-black text-blue-950">Offre non trouvée</h2>
-        <Link to={langPath('/working-together/careers')} className="text-emerald-600 font-bold hover:underline mt-4 inline-block"> Retour aux carrières </Link>
+        <h2 className="text-3xl font-black text-blue-950">{ct.notFound}</h2>
+        <Link to={langPath('/working-together/careers')} className="text-emerald-600 font-bold hover:underline mt-4 inline-block"> {ct.backToOffers} </Link>
       </div>
     );
   }
@@ -107,7 +153,7 @@ const JobDetail: React.FC = () => {
             className="inline-flex items-center gap-2 text-blue-300 font-black text-xs uppercase tracking-widest mb-8 hover:text-white transition-colors"
           >
             <ArrowLeft size={16} />
-            {language === 'fr' ? 'Toutes les offres' : 'All jobs'}
+            {ct.allOffers}
           </Link>
 
           <div className="space-y-6">
@@ -119,7 +165,7 @@ const JobDetail: React.FC = () => {
               </span>
               <span className="text-blue-300 text-[10px] font-black uppercase tracking-widest flex items-center gap-2">
                 <Calendar size={12} />
-                {language === 'fr' ? 'Publié le' : 'Posted on'} {job.postedDate}
+                {ct.postedOn} {job.postedDate}
               </span>
             </div>
 
@@ -133,7 +179,7 @@ const JobDetail: React.FC = () => {
                   <MapPin size={20} />
                 </div>
                 <div>
-                  <p className="text-[10px] font-black text-blue-300 uppercase tracking-widest leading-none mb-1">{t.workingTogether.careers.location}</p>
+                  <p className="text-[10px] font-black text-blue-300 uppercase tracking-widest leading-none mb-1">{ct.location}</p>
                   <p className="text-sm font-bold text-white">{job.location[language]}</p>
                 </div>
               </div>
@@ -143,7 +189,7 @@ const JobDetail: React.FC = () => {
                   <Briefcase size={20} />
                 </div>
                 <div>
-                  <p className="text-[10px] font-black text-blue-300 uppercase tracking-widest leading-none mb-1">{t.workingTogether.careers.contractType}</p>
+                  <p className="text-[10px] font-black text-blue-300 uppercase tracking-widest leading-none mb-1">{ct.contractType}</p>
                   <p className="text-sm font-bold text-white">{job.contractType[language]}</p>
                 </div>
               </div>
@@ -153,7 +199,7 @@ const JobDetail: React.FC = () => {
                   <Clock size={20} />
                 </div>
                 <div>
-                  <p className="text-[10px] font-black text-blue-300 uppercase tracking-widest leading-none mb-1">{t.workingTogether.careers.duration}</p>
+                  <p className="text-[10px] font-black text-blue-300 uppercase tracking-widest leading-none mb-1">{ct.duration}</p>
                   <p className="text-sm font-bold text-white">{job.duration[language]}</p>
                 </div>
               </div>
@@ -172,22 +218,22 @@ const JobDetail: React.FC = () => {
               <div className="prose prose-lg prose-blue max-w-none">
                 <h2 className="text-3xl font-black text-blue-950 mb-8 uppercase tracking-tight flex items-center gap-4">
                    <div className="w-2 h-8 bg-emerald-500 rounded-full" />
-                   {t.workingTogether.careers.responsibilities}
+                   {ct.responsibilities}
                 </h2>
-                <div dangerouslySetInnerHTML={{ __html: job.responsibilitiesHtml }} />
+                <div dangerouslySetInnerHTML={{ __html: job.responsibilitiesHtml[language] }} />
               </div>
 
               <div className="prose prose-lg prose-blue max-w-none pt-12 border-t border-gray-100">
                 <h2 className="text-3xl font-black text-blue-950 mb-8 uppercase tracking-tight flex items-center gap-4">
                    <div className="w-2 h-8 bg-blue-600 rounded-full" />
-                   {t.workingTogether.careers.qualifications}
+                   {ct.qualifications}
                 </h2>
-                <div dangerouslySetInnerHTML={{ __html: job.qualificationsHtml }} />
+                <div dangerouslySetInnerHTML={{ __html: job.qualificationsHtml[language] }} />
               </div>
 
               <div className="bg-gray-50 p-8 rounded-[2.5rem] border border-gray-100 flex items-center justify-between">
                  <div>
-                    <p className="text-xs font-black text-gray-400 uppercase tracking-widest mb-1">{t.workingTogether.careers.deadline}</p>
+                    <p className="text-xs font-black text-gray-400 uppercase tracking-widest mb-1">{ct.deadline}</p>
                     <p className="text-xl font-black text-rose-600">{job.deadline}</p>
                  </div>
                  <div className="flex gap-2">
@@ -211,22 +257,20 @@ const JobDetail: React.FC = () => {
                 <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/10 rounded-full -mr-16 -mt-16 blur-2xl" />
                 
                 <h3 className="text-2xl font-black text-white mb-6 uppercase tracking-tight leading-tight">
-                  {language === 'fr' ? 'Intéressé par ce poste ?' : 'Interested in this position?'}
+                  {ct.interestedTitle}
                 </h3>
                 
                 <p className="text-blue-300 text-sm font-medium mb-10 leading-relaxed">
-                  {language === 'fr' 
-                    ? "Soumettez votre candidature dès aujourd'hui pour rejoindre une équipe dédiée à l'excellence éducative." 
-                    : "Submit your application today to join a team dedicated to educational excellence."}
+                  {ct.applyText}
                 </p>
 
                 <div className="space-y-4">
                   <button className="w-full bg-emerald-500 hover:bg-emerald-400 text-blue-950 font-black py-5 rounded-2xl transition-all uppercase tracking-widest flex items-center justify-center gap-3 shadow-xl shadow-emerald-500/20">
                     <FileCheck size={20} />
-                    {t.workingTogether.careers.applyNow}
+                    {ct.applyNow}
                   </button>
                   <p className="text-[10px] text-center text-blue-400 font-bold uppercase tracking-widest">
-                    CV + Lettre de motivation requis
+                    {ct.requirements}
                   </p>
                 </div>
 

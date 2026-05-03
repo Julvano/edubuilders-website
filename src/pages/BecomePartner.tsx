@@ -12,13 +12,14 @@ const BecomePartner: React.FC = () => {
   const types = t.types as Record<string, { title: string, text: string }>;
 
   return (
-    <div className="py-5 lg:py-8 bg-white">
+    <div className="py-5 lg:py-8 bg-white min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-24 space-y-4">
+        <div className="text-center mb-16 lg:mb-20 space-y-4">
            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-black text-blue-950 uppercase tracking-tighter">
              {t.title}
            </h1>
-           <p className="text-xl text-emerald-600 font-bold italic">
+           <div className="w-20 h-1 bg-blue-600 mx-auto rounded-full" />
+           <p className="text-lg lg:text-xl text-emerald-600 font-bold italic">
              "{t.intro}"
            </p>
         </div>
@@ -52,7 +53,7 @@ const BecomePartner: React.FC = () => {
                     {t.guaranteesTitle}
                  </div>
                  <h2 className="text-4xl lg:text-5xl font-black leading-tight">
-                    Une collaboration basée sur la confiance et l'impact.
+                    {t.collaborationTitle}
                  </h2>
                  <p className="text-xl text-blue-100/70 font-medium leading-relaxed">
                     {t.guaranteesText}
@@ -61,17 +62,17 @@ const BecomePartner: React.FC = () => {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 pt-8">
                  <div className="space-y-3">
-                    <h4 className="text-xl font-bold">Contrôle Externe</h4>
-                    <p className="text-sm opacity-60">Audits annuels systématiques et rapports de transparence publics.</p>
+                    <h4 className="text-xl font-bold">{t.guaranteesList.audit.title}</h4>
+                    <p className="text-sm opacity-60">{t.guaranteesList.audit.text}</p>
                  </div>
                  <div className="space-y-3">
-                    <h4 className="text-xl font-bold">Responsabilité</h4>
-                    <p className="text-sm opacity-60">Indicateurs de performance clairs et redevabilité envers nos partenaires.</p>
+                    <h4 className="text-xl font-bold">{t.guaranteesList.accountability.title}</h4>
+                    <p className="text-sm opacity-60">{t.guaranteesList.accountability.text}</p>
                  </div>
               </div>
 
               <button className="bg-emerald-500 hover:bg-emerald-400 text-blue-950 font-black px-12 py-5 rounded-3xl transition-all uppercase tracking-widest text-lg shadow-2xl shadow-emerald-500/20">
-                 Démarrer un partenariat
+                 {t.cta}
               </button>
            </div>
         </div>

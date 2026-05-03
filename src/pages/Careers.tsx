@@ -17,7 +17,7 @@ import { Link } from 'react-router-dom';
 const Careers: React.FC = () => {
   const { language, content: tContent, langPath } = useLanguage();
   const t = tContent.workingTogether.careers;
-  const [filter, setFilter] = useState<'All' | 'Volontaire' | 'Salarié'>('All');
+  const [filter, setFilter] = useState<'All' | 'Volontaire' | 'Salarié' | 'Stage'>('All');
 
   const jobs = [
     {
@@ -28,7 +28,7 @@ const Careers: React.FC = () => {
       region: language === 'fr' ? "Afrique" : "Africa",
       date: "21 avril 2026",
       readingTime: "1",
-      excerpt: language === 'fr' ? "EduBuilders lance un appel à candidatures pour recruter des experts en ingénierie pédagogique." : "EduBuilders is launching a call for applications to recruit instructional design experts.",
+      excerpt: language === 'fr' ? "eduBuilders lance un appel à candidatures pour recruter des experts en ingénierie pédagogique." : "eduBuilders is launching a call for applications to recruit instructional design experts.",
       image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2071&auto=format&fit=crop",
       urgent: true
     },
@@ -37,7 +37,7 @@ const Careers: React.FC = () => {
       title: language === 'fr' ? "Volontaire de Soutien Éducatif - Parakou" : "Educational Support Volunteer - Parakou",
       type: "Volontaire",
       location: "Bénin",
-      region: "Bénin",
+      region: language === 'fr' ? "Bénin" : "Benin",
       date: "19 avril 2026",
       readingTime: "2",
       excerpt: language === 'fr' ? "Rejoignez notre équipe terrain pour soutenir les programmes d'alphabétisation à Parakou." : "Join our field team to support literacy programs in Parakou.",
@@ -46,14 +46,14 @@ const Careers: React.FC = () => {
     },
     {
       id: 3,
-      title: language === 'fr' ? "Analyste de Politiques Publiques Éducatives" : "Educational Public Policy Analyst",
-      type: "Salarié",
+      title: language === 'fr' ? "Stagiaire d'appui technique et à la recherche" : "Technical and Research Support Intern",
+      type: "Stage",
       location: "Bénin",
-      region: "Bénin",
+      region: language === 'fr' ? "Bénin" : "Benin",
       date: "15 avril 2026",
       readingTime: "5",
-      excerpt: language === 'fr' ? "Nous recherchons un analyste pour évaluer l'impact des réformes curriculaires régionales." : "We are looking for an analyst to evaluate the impact of regional curricular reforms.",
-      image: "https://images.unsplash.com/photo-1573161559521-4804bb6dd303?q=80&w=2069&auto=format&fit=crop",
+      excerpt: language === 'fr' ? "L'organisation accueille des stagiaires pour l'appui technique et la recherche opérationnelle sur le terrain." : "The organization welcomes interns for technical support and operational research on the ground.",
+      image: "https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=2070&auto=format&fit=crop",
       urgent: false
     }
   ];
@@ -61,13 +61,14 @@ const Careers: React.FC = () => {
   const filteredJobs = filter === 'All' ? jobs : jobs.filter(j => j.type === filter);
 
   return (
-    <div className="py-5 lg:py-8 bg-gray-50/20">
+    <div className="py-5 lg:py-8 bg-white min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mb-24 space-y-6">
+        <div className="max-w-4xl mb-16 lg:mb-20 space-y-4">
            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-black text-blue-950 uppercase tracking-tighter">
              {t.title}
            </h1>
-           <p className="text-xl text-gray-600 font-medium leading-relaxed">
+           <div className="w-20 h-1 bg-blue-600 rounded-full" />
+           <p className="text-lg lg:text-xl text-gray-600 font-medium leading-relaxed">
              {t.intro}
            </p>
         </div>
@@ -85,11 +86,11 @@ const Careers: React.FC = () => {
                  <div className="grid grid-cols-2 gap-4">
                     <div className="p-6 bg-white rounded-3xl border border-gray-100 flex flex-col gap-3 shadow-sm">
                        <Heart className="text-rose-500" size={24} />
-                       <span className="font-black text-sm uppercase tracking-wider text-blue-950">Équité</span>
+                       <span className="font-black text-sm uppercase tracking-wider text-blue-950">{t.equity}</span>
                     </div>
                     <div className="p-6 bg-white rounded-3xl border border-gray-100 flex flex-col gap-3 shadow-sm">
                        <Lightbulb className="text-amber-500" size={24} />
-                       <span className="font-black text-sm uppercase tracking-wider text-blue-950">Innovation</span>
+                       <span className="font-black text-sm uppercase tracking-wider text-blue-950">{t.innovation}</span>
                     </div>
                  </div>
               </section>
@@ -108,13 +109,13 @@ const Careers: React.FC = () => {
            <div className="relative">
               <img 
                 src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=2084&auto=format&fit=crop" 
-                alt="Working at EduBuilders" 
+                alt="Working at eduBuilders" 
                 className="rounded-[4rem] shadow-2xl grayscale-[30%] hover:grayscale-0 transition-all duration-700"
                 referrerPolicy="no-referrer"
               />
               <div className="absolute -bottom-10 -left-10 bg-blue-900 text-white p-10 rounded-[3rem] shadow-2xl space-y-2">
                  <p className="text-4xl font-black">25+</p>
-                 <p className="text-xs font-bold uppercase tracking-widest opacity-70 italic">Experts Internationaux</p>
+                 <p className="text-xs font-bold uppercase tracking-widest opacity-70 italic">{t.expertsStat}</p>
               </div>
            </div>
         </div>
@@ -125,22 +126,43 @@ const Careers: React.FC = () => {
               <div className="space-y-4">
                  <h2 className="text-4xl font-black text-blue-950 uppercase tracking-tight">{t.listingTitle}</h2>
                  <div className="flex gap-3">
-                    {['All', 'Salarié', 'Volontaire'].map((category) => (
-                      <button 
-                        key={category}
-                        onClick={() => setFilter(category as any)}
-                        className={`px-6 py-2 rounded-full text-xs font-black uppercase tracking-widest transition-all ${
-                          filter === category ? 'bg-blue-950 text-white shadow-lg' : 'bg-gray-100 text-gray-400 hover:bg-gray-200'
-                        }`}
-                      >
-                        {category === 'All' ? (language === 'fr' ? 'Tous' : 'All') : category}
-                      </button>
-                    ))}
+                    <button 
+                      onClick={() => setFilter('All')}
+                      className={`px-6 py-2 rounded-full text-xs font-black uppercase tracking-widest transition-all ${
+                        filter === 'All' ? 'bg-blue-950 text-white shadow-lg' : 'bg-gray-100 text-gray-400 hover:bg-gray-200'
+                      }`}
+                    >
+                      {t.filterAll}
+                    </button>
+                    <button 
+                      onClick={() => setFilter('Salarié')}
+                      className={`px-6 py-2 rounded-full text-xs font-black uppercase tracking-widest transition-all ${
+                        filter === 'Salarié' ? 'bg-blue-950 text-white shadow-lg' : 'bg-gray-100 text-gray-400 hover:bg-gray-200'
+                      }`}
+                    >
+                      {t.filterJobs}
+                    </button>
+                    <button 
+                      onClick={() => setFilter('Stage')}
+                      className={`px-6 py-2 rounded-full text-xs font-black uppercase tracking-widest transition-all ${
+                        filter === 'Stage' ? 'bg-blue-950 text-white shadow-lg' : 'bg-gray-100 text-gray-400 hover:bg-gray-200'
+                      }`}
+                    >
+                      {t.filterInternships}
+                    </button>
+                    <button 
+                      onClick={() => setFilter('Volontaire')}
+                      className={`px-6 py-2 rounded-full text-xs font-black uppercase tracking-widest transition-all ${
+                        filter === 'Volontaire' ? 'bg-blue-950 text-white shadow-lg' : 'bg-gray-100 text-gray-400 hover:bg-gray-200'
+                      }`}
+                    >
+                      {t.filterVolunteering}
+                    </button>
                  </div>
               </div>
               <div className="relative w-full md:w-80">
                  <Search className="absolute left-5 top-1/2 -translate-y-1/2 text-gray-400" size={18} />
-                 <input type="text" placeholder="Rechercher..." className="w-full bg-white border-2 border-gray-100 rounded-2xl px-14 py-4 font-bold text-sm focus:border-blue-900 outline-none" />
+                 <input type="text" placeholder={t.searchPlaceholder} className="w-full bg-white border-2 border-gray-100 rounded-2xl px-14 py-4 font-bold text-sm focus:border-blue-900 outline-none" />
               </div>
            </div>
 
@@ -166,7 +188,9 @@ const Careers: React.FC = () => {
                         />
                         <div className="absolute top-4 left-4 flex gap-2">
                            <span className="px-3 py-1 bg-blue-600 text-white text-[10px] font-black uppercase rounded-lg shadow-lg">
-                              {job.type === 'Salarié' ? 'Emplois' : 'Volontaire'}
+                              {job.type === 'Salarié' ? t.filterJobs : 
+                               job.type === 'Stage' ? t.filterInternships : 
+                               t.filterVolunteering}
                            </span>
                            <span className="px-3 py-1 bg-white text-gray-700 text-[10px] font-black uppercase rounded-lg flex items-center gap-1 shadow-lg">
                               <MapPin size={10} />
@@ -184,7 +208,7 @@ const Careers: React.FC = () => {
                            </div>
                            <div className="flex items-center gap-1.5">
                               <Clock size={14} className="text-blue-500" />
-                              <span>{job.readingTime} {language === 'fr' ? 'min' : 'min'}</span>
+                              <span>{job.readingTime} min</span>
                            </div>
                         </div>
 
@@ -198,7 +222,9 @@ const Careers: React.FC = () => {
 
                         <div className="flex gap-2 pt-2">
                            <span className="px-3 py-1.5 bg-blue-50 text-blue-600 text-[10px] font-black uppercase rounded-full">
-                              {job.type === 'Salarié' ? 'Emplois' : 'Volontaire'}
+                              {job.type === 'Salarié' ? t.filterJobs : 
+                               job.type === 'Stage' ? t.filterInternships : 
+                               t.filterVolunteering}
                            </span>
                            <span className="px-3 py-1.5 bg-gray-50 text-gray-600 text-[10px] font-black uppercase rounded-full flex items-center gap-1">
                               <MapPin size={10} />
@@ -211,7 +237,7 @@ const Careers: React.FC = () => {
                              to={langPath(`/working-together/careers/${job.id}`)}
                              className="inline-flex items-center gap-2 text-blue-600 font-black text-sm uppercase tracking-wider hover:text-blue-900 transition-colors"
                            >
-                             {language === 'fr' ? "Lire l'article" : "Read more"}
+                             {tContent.home.viewMore}
                              <ArrowRight size={16} />
                            </Link>
                         </div>

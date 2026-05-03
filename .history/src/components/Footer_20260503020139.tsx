@@ -13,11 +13,6 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           <div className="space-y-6">
             {/* <h3 className="text-white text-xl font-bold">EduBuilders <span className="text-emerald-500">Institute</span></h3> */}
-            <img 
-                src={`${import.meta.env.BASE_URL}assets/images/logo.png`} 
-                alt="Logo EduBuilders"
-                className="h-12 w-auto sm:h-15 md:h-15 lg:h-12 object-contain"
-            />
             <p className="text-sm leading-relaxed opacity-70">
               {content.hero.subtitle}
             </p>

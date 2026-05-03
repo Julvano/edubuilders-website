@@ -65,7 +65,7 @@ const Home: React.FC = () => {
   ];
 
   return (
-    <div className="flex flex-col">
+    <div className="py-5 lg:py-8 flex flex-col">
       {/* Hero Section */}
       <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-white">
         <div className="absolute inset-0 z-0">
@@ -73,7 +73,7 @@ const Home: React.FC = () => {
            <div className="absolute bottom-[-10%] left-[-10%] w-[600px] h-[600px] bg-emerald-50/30 rounded-full blur-3xl opacity-50" />
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-5 lg:py-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-20 lg:py-32">
           <div className="flex flex-col lg:flex-row items-center gap-16">
             <div className="flex-1 space-y-8 text-center lg:text-left">
               <motion.div
@@ -81,15 +81,15 @@ const Home: React.FC = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
               >
+                <span className="inline-block px-4 py-1.5 rounded-full bg-emerald-50 text-emerald-700 text-sm font-bold tracking-wide uppercase mb-6">
+                  {content.hero.motto}
+                </span>
                 <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-blue-950 leading-[1.1] tracking-tighter uppercase">
                   {content.hero.title}
                 </h1>
                 <p className="mt-6 text-xl text-gray-600 max-w-2xl font-medium leading-relaxed">
                   {content.hero.subtitle}
                 </p>
-                <span className="inline-block px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 text-[12px] font-bold tracking-tight lowercase mb-4">
-                  {content.hero.motto}
-                </span>
               </motion.div>
 
               <motion.div

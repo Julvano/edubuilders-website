@@ -66,9 +66,9 @@ const ArticleDetail: React.FC = () => {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
-          <h2 className="text-2xl font-bold text-blue-950 mb-4">Article non trouvé</h2>
+          <h2 className="text-2xl font-bold text-blue-950 mb-4">{t.publications.notFound}</h2>
           <Link to={langPath('/publications')} className="text-emerald-600 font-bold hover:underline">
-            Retour aux publications
+            {t.publications.back}
           </Link>
         </div>
       </div>
@@ -88,7 +88,7 @@ const ArticleDetail: React.FC = () => {
           className="inline-flex items-center gap-2 text-gray-500 hover:text-blue-900 font-bold mb-8 transition-colors"
         >
           <ArrowLeft size={18} />
-          {language === 'fr' ? 'Retour aux publications' : 'Back to publications'}
+          {t.publications.back}
         </Link>
 
         {/* Header */}
@@ -118,7 +118,7 @@ const ArticleDetail: React.FC = () => {
             </div>
             <button className="flex items-center gap-2 hover:text-blue-900 transition-colors ml-auto">
               <Share2 size={16} />
-              <span className="hidden sm:inline">Partager</span>
+              <span className="hidden sm:inline">{t.publications.share}</span>
             </button>
           </div>
         </div>
@@ -149,8 +149,8 @@ const ArticleDetail: React.FC = () => {
               EB
            </div>
            <div>
-              <h4 className="font-bold text-blue-950">EduBuilders Editorial</h4>
-              <p className="text-sm text-gray-500">Expertise en innovation et coopération éducative en Afrique de l'Ouest.</p>
+              <h4 className="font-bold text-blue-950">{t.publications.editorialTitle}</h4>
+              <p className="text-sm text-gray-500">{t.publications.editorialBio}</p>
            </div>
         </div>
       </div>

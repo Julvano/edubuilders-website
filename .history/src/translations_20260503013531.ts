@@ -559,7 +559,7 @@ export const translations: Record<Language, Content> = {
       phoneTitle: "Téléphone",
       phone: "+229 00 00 00 00",
       emailTitle: "Email",
-      email: "contact@edubuilders.org",
+      email: "contact@edubuilders.bj",
       formTitle: "Envoyez-nous un message",
       labelIdentity: "Nom et Prénom *",
       labelEmail: "Adresse email *",
@@ -590,7 +590,7 @@ export const translations: Record<Language, Content> = {
       notFound: "Article non trouvé",
       back: "Retour aux publications",
       share: "Partager",
-      editorialTitle: "eduBuilders Éditorial",
+      editorialTitle: "EduBuilders Éditorial",
       editorialBio: "Expertise en innovation et coopération éducative en Afrique de l'Ouest."
     },
     workingTogether: {
@@ -934,7 +934,7 @@ export const translations: Record<Language, Content> = {
       phoneTitle: "Phone",
       phone: "+229 00 00 00 00",
       emailTitle: "Email",
-      email: "contact@edubuilders.org",
+      email: "contact@edubuilders.bj",
       formTitle: "Send us a message",
       labelIdentity: "First & Last Name *",
       labelEmail: "Email Address *",
@@ -965,7 +965,7 @@ export const translations: Record<Language, Content> = {
       notFound: "Article not found",
       back: "Back to publications",
       share: "Share",
-      editorialTitle: "eduBuilders Editorial",
+      editorialTitle: "EduBuilders Editorial",
       editorialBio: "Expertise in innovation and educational cooperation in West Africa."
     },
     workingTogether: {

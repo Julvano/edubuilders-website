@@ -3,7 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React, { useEffect } from 'react';
+
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation, useParams, Navigate } from 'react-router-dom';
 import { LanguageProvider, useLanguage } from './components/LanguageContext';
 import Navbar from './components/Navbar';
@@ -27,6 +28,7 @@ import ExpertContribution from './pages/ExpertContribution';
 import BecomePartner from './pages/BecomePartner';
 import Careers from './pages/Careers';
 import JobDetail from './pages/JobDetail';
+import { useEffect } from 'react';
 
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 
@@ -35,13 +37,14 @@ const SEO = () => {
   const { language } = useLanguage();
   const location = useLocation();
 
+  // Basic management of hreflang tags
   const pathSegments = location.pathname.split('/').filter(Boolean);
+  // Remove the language segment if it exists
   const routePath = (pathSegments.length > 0 && (pathSegments[0] === 'fr' || pathSegments[0] === 'en'))
     ? pathSegments.slice(1).join('/')
     : pathSegments.join('/');
   
-  // Note: On ajoute le sous-répertoire ici pour les balises de référencement
-  const baseUrl = `${window.location.origin}/edubuilders-website`;
+  const baseUrl = window.location.origin;
 
   return (
     <Helmet>
@@ -65,6 +68,7 @@ const ScrollToTop = () => {
 const LanguageWrapper = () => {
   const { lang } = useParams<{ lang: string }>();
 
+  // Redirect if language is invalid
   if (lang !== 'fr' && lang !== 'en') {
     return <Navigate to="/fr" replace />;
   }
@@ -107,8 +111,7 @@ const LanguageWrapper = () => {
 export default function App() {
   return (
     <HelmetProvider>
-      {/* AJOUT DU BASENAME ICI */}
-      <Router basename="/edubuilders-website">
+      <Router>
         <Routes>
           <Route path="/:lang/*" element={<LanguageWrapper />} />
           <Route path="*" element={<Navigate to="/fr" replace />} />
@@ -117,3 +120,4 @@ export default function App() {
     </HelmetProvider>
   );
 }
+
