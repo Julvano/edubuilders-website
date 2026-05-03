@@ -29,6 +29,7 @@ import Careers from './pages/Careers';
 import JobDetail from './pages/JobDetail';
 import Loader from './components/Loader';
 
+
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 
 // SEO Hreflang Component
@@ -37,12 +38,11 @@ const SEO = () => {
   const location = useLocation();
 
   const pathSegments = location.pathname.split('/').filter(Boolean);
-  // On ignore le segment de langue pour construire le chemin relatif
   const routePath = (pathSegments.length > 0 && (pathSegments[0] === 'fr' || pathSegments[0] === 'en'))
     ? pathSegments.slice(1).join('/')
     : pathSegments.join('/');
   
-  // Correction de la baseUrl pour inclure le sous-répertoire dans les balises meta
+  // Note: On ajoute le sous-répertoire ici pour les balises de référencement
   const baseUrl = `${window.location.origin}/edubuilders-website`;
 
   return (
@@ -64,23 +64,34 @@ const ScrollToTop = () => {
   return null;
 };
 
+
 const LanguageWrapper = () => {
   const { lang } = useParams<{ lang: string }>();
   const location = useLocation();
   const [isLoading, setIsLoading] = useState(false);
 
+  // Redirect if language is invalid
   if (lang !== 'fr' && lang !== 'en') {
     return <Navigate to="/fr" replace />;
   }
 
+  // Handle route change loading
   useEffect(() => {
     setIsLoading(true);
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 800);
+    }, 800); // 800ms for a smooth transition
 
     return () => clearTimeout(timer);
   }, [location.pathname]);
+
+
+const LanguageWrapper = () => {
+  const { lang } = useParams<{ lang: string }>();
+
+  if (lang !== 'fr' && lang !== 'en') {
+    return <Navigate to="/fr" replace />;
+  }
 
   return (
     <LanguageProvider>
@@ -121,7 +132,7 @@ const LanguageWrapper = () => {
 export default function App() {
   return (
     <HelmetProvider>
-      {/* Configuration du basename pour GitHub Pages ou sous-répertoire */}
+      {/* AJOUT DU BASENAME ICI */}
       <Router basename="/edubuilders-website">
         <Routes>
           <Route path="/:lang/*" element={<LanguageWrapper />} />

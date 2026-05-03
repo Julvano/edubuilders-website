@@ -309,9 +309,9 @@ export const translations: Record<Language, Content> = {
     nav: {
       home: "Accueil",
       about: "À propos",
-      actions: "Actions",
+      actions: "Actions & Expertise",
       partners: "Partenaires",
-      publications: "Publications",
+      publications: "Études & Publications",
       join: "Agir ensemble",
       donate: "Faire un don",
       contact: "Contact",
@@ -531,7 +531,7 @@ export const translations: Record<Language, Content> = {
       explorer: "Explorer",
       jobsTitle: "Emploi, Stage et Volontariat",
       jobsText: "Recrutement régulier pour notre organe de soutien technique ou pour des stages d'appui à la recherche. Rejoignez une équipe passionnée.",
-      membershipTitle: "Devenir Membre",
+      membershipTitle: "Adhérer",
       membershipText: "L'adhésion se fait par demande écrite soumise à l'approbation de la Direction Générale, accompagnée des frais d'adhésion requis.",
       membershipCTA: "Nous contacter pour soumettre votre demande d'adhésion",
       expertTitle: "Contribuer en tant qu'Expert",
@@ -599,7 +599,7 @@ export const translations: Record<Language, Content> = {
     },
     workingTogether: {
       membership: {
-        title: "Devenir Membre",
+        title: "Adhérer",
         intro: "L'adhésion est un acte d'engagement pour l'avenir éducatif de l'Afrique de l'Ouest.",
         statutesTitle: "Conditions Statutaires (Art. 5)",
         statutesText: "L'adhésion nécessite une demande écrite soumise à l'approbation de la Direction Générale et le paiement du droit d'adhésion.",
@@ -688,9 +688,9 @@ export const translations: Record<Language, Content> = {
     nav: {
       home: "Home",
       about: "About",
-      actions: "Actions",
+      actions: "Actions & Expertise",
       partners: "Partners",
-      publications: "Publications",
+      publications: "Studies & Publications",
       join: "Work Together",
       donate: "Donate",
       contact: "Contact",
