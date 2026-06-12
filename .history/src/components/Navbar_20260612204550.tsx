@@ -48,14 +48,19 @@ const Navbar: React.FC = () => {
               eduBuilders
               <span className="text-emerald-700 ml-1">Institute</span>
             </span> */}
+            {/* <img 
+                src={`${import.meta.env.BASE_URL}assets/images/logo.png`} 
+                alt="Logo EduBuilders"
+                className="h-12 w-auto sm:h-15 md:h-15 lg:h-12 object-contain"
+            /> */}
             <img 
                 src={`${import.meta.env.BASE_URL}assets/images/logo.png`} 
                 alt="Logo EduBuilders"
-                className="h-10 w-auto sm:h-10 md:h-10 lg:h-12 object-contain"
+                className="h-17 w-auto sm:h-20 md:h-25 lg:h-17 object-contain"
             />
-            <span className="text-[10px] uppercase font-semibold text-gray-500 tracking-wider hidden sm:block">
+            {/* <span className="text-[10px] uppercase font-semibold text-gray-500 tracking-wider hidden sm:block">
               West Africa
-            </span>
+            </span> */}
           </NavLink>
 
           {/* Desktop Nav */}

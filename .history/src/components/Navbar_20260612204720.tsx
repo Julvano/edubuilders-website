@@ -43,12 +43,24 @@ const Navbar: React.FC = () => {
     <nav className="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-20 items-center">
-          <NavLink to={langPath('/')} className="w-[85px] flex flex-col">
+          <NavLink to={langPath('/')} className="flex flex-col">
+            {/* <span className="text-xl font-bold text-blue-900 tracking-tight leading-tight">
+              eduBuilders
+              <span className="text-emerald-700 ml-1">Institute</span>
+            </span> */}
+            {/* <img 
+                src={`${import.meta.env.BASE_URL}assets/images/logo.png`} 
+                alt="Logo EduBuilders"
+                className="h-12 w-auto sm:h-15 md:h-15 lg:h-12 object-contain"
+            /> */}
             <img 
-              src={`${import.meta.env.BASE_URL}assets/images/logo.png`} 
-              alt="Logo eduBuilders institute"
-              className="w-[85px] h-17 sm:h-20 md:h-25 lg:h-17 object-cover"
+                src={`${import.meta.env.BASE_URL}assets/images/logo.png`} 
+                alt="Logo EduBuilders"
+                className="h-17 w-500 sm:h-20 md:h-25 lg:h-17 object-contain"
             />
+            {/* <span className="text-[10px] uppercase font-semibold text-gray-500 tracking-wider hidden sm:block">
+              West Africa
+            </span> */}
           </NavLink>
 
           {/* Desktop Nav */}

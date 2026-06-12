@@ -43,11 +43,11 @@ const Navbar: React.FC = () => {
     <nav className="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-20 items-center">
-          <NavLink to={langPath('/')} className="w-[85px] flex flex-col">
+          <NavLink to={langPath('/')} className="w-[500px] flex flex-col">
             <img 
               src={`${import.meta.env.BASE_URL}assets/images/logo.png`} 
-              alt="Logo eduBuilders institute"
-              className="w-[85px] h-17 sm:h-20 md:h-25 lg:h-17 object-cover"
+              alt="Logo EduBuilders"
+              className="w-[500px] h-17 sm:h-20 md:h-25 lg:h-17 object-cover"
             />
           </NavLink>
 

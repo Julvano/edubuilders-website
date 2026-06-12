@@ -47,7 +47,7 @@ const Navbar: React.FC = () => {
             <img 
               src={`${import.meta.env.BASE_URL}assets/images/logo.png`} 
               alt="Logo eduBuilders institute"
-              className="w-[85px] h-17 sm:h-20 md:h-25 lg:h-17 object-cover"
+              className="w-[85px] h-12 sm:h-15 md:h-15 lg:h-12  object-cover"
             />
           </NavLink>
 
