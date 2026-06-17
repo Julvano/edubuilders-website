@@ -228,7 +228,7 @@ const Careers: React.FC = () => {
                            <Link to={langPath(`/working-together/careers/${job.id}`)}>{job.title}</Link>
                         </h3>
 
-                        <p className="text-sm text-gray-500 leading-relaxed break-words hyphens-auto text-justify font-medium line-clamp-3">
+                        <p className="text-sm text-gray-500 leading-relaxed font-medium line-clamp-3">
                            {job.excerpt}
                         </p>
 

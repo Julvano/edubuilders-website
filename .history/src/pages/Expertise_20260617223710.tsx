@@ -88,13 +88,13 @@ const Expertise: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 text-left">
             <div className="space-y-4">
               <h4 className="text-lg font-black text-emerald-600 uppercase tracking-widest">{t.approach.data.title}</h4>
-              <p className="text-gray-600 font-medium leading-tighter break-words hyphens-auto text-justify">
+              <p className="text-gray-600 font-medium leading-relaxed">
                 {t.approach.data.text}
               </p>
             </div>
             <div className="space-y-4">
               <h4 className="text-lg font-black text-blue-600 uppercase tracking-widest">{t.approach.coop.title}</h4>
-              <p className="text-gray-600 font-medium leading-tighter break-words hyphens-auto text-justify">
+              <p className="text-gray-600 font-medium leading-relaxed">
                 {t.approach.coop.text}
               </p>
             </div>

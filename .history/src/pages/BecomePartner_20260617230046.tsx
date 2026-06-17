@@ -38,7 +38,7 @@ const BecomePartner: React.FC = () => {
                    {key === 'technical' ? <Presentation size={36} /> : key === 'financial' ? <TrendingUp size={36} /> : <Handshake size={36} />}
                 </div>
                 <h3 className="text-md sm:text-2xl font-black uppercase tracking-tight">{value.title}</h3>
-                <p className="opacity-70 font-medium leading-tighter break-words hyphens-auto">
+                <p className="opacity-70 font-medium leading-relaxed break-words hyphens-auto text-justify">
                    {value.text}
                 </p>
              </motion.div>
@@ -53,10 +53,10 @@ const BecomePartner: React.FC = () => {
                     <ShieldCheck size={24} />
                     {t.guaranteesTitle}
                  </div>
-                 <h2 className="text-sm lg:text-2xl font-black leading-tighter text-blue-100 uppercase tracking-tighter break-words hyphens-auto">
+                 <h2 className="text-xl lg:text-4xl font-black leading-tight">
                     {t.collaborationTitle}
                  </h2>
-                 <p className="text-sm lg:text-lg text-blue-100/70 font-medium leading-tighter ">
+                 <p className="text-lg lg:text-xl text-blue-100/70 font-medium leading-relaxed break-words hyphens-auto text-justify">
                     {t.guaranteesText}
                  </p>
               </div>

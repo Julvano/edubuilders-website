@@ -69,7 +69,7 @@ const Mission: React.FC = () => {
                   <div className="mt-1 flex-shrink-0">
                     <CheckCircle2 size={24} className="text-emerald-500" />
                   </div>
-                  <p className="text-lg font-medium text-gray-700 leading-tighter break-words hyphens-auto text-justify group-hover:text-blue-900 transition-colors">
+                  <p className="text-lg font-medium text-gray-700 leading-relaxed group-hover:text-blue-900 transition-colors">
                     {point}
                   </p>
                 </motion.div>

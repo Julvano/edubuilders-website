@@ -246,7 +246,7 @@ const Projects: React.FC = () => {
                       <h3 className="text-xl font-black text-blue-950 leading-tight group-hover:text-emerald-600 transition-colors">
                         {project.title}
                       </h3>
-                      <p className="text-gray-600 font-medium leading-relaxed line-clamp-3 ">
+                      <p className="text-gray-600 font-medium leading-relaxed line-clamp-3 leading-tighter break-words hyphens-auto text-justify">
                         {project.excerpt}
                       </p>
                     </div>

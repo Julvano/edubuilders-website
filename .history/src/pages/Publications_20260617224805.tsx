@@ -244,7 +244,7 @@ const ArticleCard: React.FC<{ article: typeof ARTICLES[0], lang: 'fr' | 'en', t:
         {article.title[lang]}
       </h3>
 
-      <p className="text-sm text-gray-600 leading-tighter break-words hyphens-auto text-justify font-medium line-clamp-3">
+      <p className="text-sm text-gray-600 leading-relaxed font-medium line-clamp-3">
         {article.excerpt[lang]}
       </p>
 

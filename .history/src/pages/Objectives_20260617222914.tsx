@@ -109,7 +109,7 @@ const Objectives: React.FC = () => {
                 <h3 className="text-emerald-400 text-sm font-black uppercase tracking-widest">
                   {t.audiencesActivities.title}
                 </h3>
-                <p className="text-3xl font-black leading-tighter break-words hyphens-auto text-justify">
+                <p className="text-3xl font-black leading-tight">
                    {t.audiencesActivities.audiences}
                 </p>
               </div>

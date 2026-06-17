@@ -155,8 +155,8 @@ const Home: React.FC = () => {
              className="bg-blue-50/50 p-10 lg:p-20 rounded-[4rem] text-center max-w-5xl mx-auto relative group overflow-hidden"
            >
               <div className="absolute top-0 left-0 w-32 h-32 bg-blue-100/50 rounded-full blur-3xl -ml-16 -mt-16 group-hover:scale-150 transition-transform duration-1000" />
-              <p className="text-xl lg:text-2xl font-bold text-blue-950 leading-tighter break-words hyphens-auto relative z-10 text-justify">
-                {content.home.presentation}
+              <p className="text-xl lg:text-2xl font-bold text-blue-950 leading-tighter break-words relative z-10 text-justify">
+                 {content.home.presentation}
               </p>
            </motion.div>
         </div>

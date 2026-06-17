@@ -88,7 +88,7 @@ const Team: React.FC = () => {
                     </h3>
                   </div>
 
-                  <p className="text-gray-600 font-medium leading-tighter break-words hyphens-auto text-justify">
+                  <p className="text-gray-600 font-medium leading-relaxed">
                      {member.description}
                   </p>
 

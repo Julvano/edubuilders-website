@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+
+import React, { useState } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import { Menu, X, Globe, ChevronDown } from 'lucide-react';
 import { useLanguage } from './LanguageContext';
@@ -10,18 +11,6 @@ const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
-  // Bloquer le défilement du corps de la page lorsque le menu mobile est ouvert
-  useEffect(() => {
-    if (isMenuOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
-    }
-    return () => {
-      document.body.style.overflow = '';
-    };
-  }, [isMenuOpen]);
-
   const isPathActive = (path: string) => {
     if (path === '/') {
       return location.pathname === langPath('/') || location.pathname === `/${language}`;
@@ -29,8 +18,7 @@ const Navbar: React.FC = () => {
     return location.pathname.startsWith(langPath(path));
   };
 
-  const isDropdownActive = (items: { path: string }[]) => 
-    items.some(item => location.pathname.startsWith(langPath(item.path)));
+  const isDropdownActive = (items: { path: string }[]) => items.some(item => location.pathname.startsWith(langPath(item.path)));
 
   const workingTogetherItems = [
     { name: content.workingTogether.careers.title, path: '/working-together/careers' },
@@ -55,21 +43,23 @@ const Navbar: React.FC = () => {
     <nav className="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-20 items-center">
-          <NavLink to={langPath('/')} className="w-[85px] flex flex-col">
-            <img 
-              src={`${import.meta.env.BASE_URL}assets/images/logo.png`} 
-              alt="Logo eduBuilders institute"
-              className="w-[85px] h-17 sm:h-20 md:h-25 lg:h-17 object-cover"
-            />
+          <NavLink to={langPath('/')} className="flex flex-col">
+            <span className="text-xl font-bold text-blue-900 tracking-tight leading-tight">
+              eduBuilders
+              <span className="text-emerald-700 ml-1">Institute</span>
+            </span>
+            <span className="text-[10px] uppercase font-semibold text-gray-500 tracking-wider hidden sm:block">
+              West Africa
+            </span>
           </NavLink>
 
           {/* Desktop Nav */}
-          <div className="hidden lg:flex items-center space-x-6">
+          <div className="hidden lg:flex items-center space-x-8">
             {/* 1. Home */}
             <NavLink
               to={langPath('/')}
-              className={`text-sm font-medium px-3 py-2 rounded-xl transition-all hover:text-emerald-700 hover:bg-gray-50 ${
-                isPathActive('/') ? 'bg-emerald-50 text-emerald-800 font-bold' : 'text-gray-600'
+              className={`text-sm font-medium transition-colors hover:text-emerald-700 ${
+                isPathActive('/') ? 'text-emerald-700 font-bold' : 'text-gray-600'
               }`}
             >
               {content.nav.home}
@@ -78,8 +68,8 @@ const Navbar: React.FC = () => {
             {/* 2. About Dropdown */}
             <div className="relative group/about">
               <button 
-                className={`flex items-center gap-1.5 text-sm font-medium px-3 py-2 rounded-xl transition-all group-hover/about:text-emerald-700 group-hover/about:bg-gray-50 ${
-                  isDropdownActive(aboutItems) ? 'bg-emerald-50 text-emerald-800 font-bold' : 'text-gray-600'
+                className={`flex items-center gap-1.5 text-sm font-medium transition-colors group-hover/about:text-emerald-700 ${
+                  isDropdownActive(aboutItems) ? 'text-emerald-700 font-bold' : 'text-gray-600'
                 }`}
               >
                 {content.nav.about}
@@ -105,8 +95,8 @@ const Navbar: React.FC = () => {
             {/* 3. Actions & Expertise Dropdown */}
             <div className="relative group/expertise">
               <button 
-                className={`flex items-center gap-1.5 text-sm font-medium px-3 py-2 rounded-xl transition-all group-hover/expertise:text-emerald-700 group-hover/expertise:bg-gray-50 ${
-                  isDropdownActive(expertiseItems) ? 'bg-emerald-50 text-emerald-800 font-bold' : 'text-gray-600'
+                className={`flex items-center gap-1.5 text-sm font-medium transition-colors group-hover/expertise:text-emerald-700 ${
+                  isDropdownActive(expertiseItems) ? 'text-emerald-700 font-bold' : 'text-gray-600'
                 }`}
               >
                 {content.nav.actions}
@@ -132,8 +122,8 @@ const Navbar: React.FC = () => {
             {/* 4. Publications */}
             <NavLink
               to={langPath('/publications')}
-              className={`text-sm font-medium px-3 py-2 rounded-xl transition-all hover:text-emerald-700 hover:bg-gray-50 ${
-                isPathActive('/publications') ? 'bg-emerald-50 text-emerald-800 font-bold' : 'text-gray-600'
+              className={`text-sm font-medium transition-colors hover:text-emerald-700 ${
+                isPathActive('/publications') ? 'text-emerald-700 font-bold' : 'text-gray-600'
               }`}
             >
               {content.nav.publications}
@@ -142,8 +132,8 @@ const Navbar: React.FC = () => {
             {/* 5. Partners */}
             <NavLink
               to={langPath('/partners')}
-              className={`text-sm font-medium px-3 py-2 rounded-xl transition-all hover:text-emerald-700 hover:bg-gray-50 ${
-                isPathActive('/partners') ? 'bg-emerald-50 text-emerald-800 font-bold' : 'text-gray-600'
+              className={`text-sm font-medium transition-colors hover:text-emerald-700 ${
+                isPathActive('/partners') ? 'text-emerald-700 font-bold' : 'text-gray-600'
               }`}
             >
               {content.nav.partners}
@@ -156,8 +146,8 @@ const Navbar: React.FC = () => {
               onMouseLeave={() => setIsDropdownOpen(false)}
             >
               <button 
-                className={`flex items-center gap-1.5 text-sm font-medium px-3 py-2 rounded-xl transition-all hover:text-emerald-700 hover:bg-gray-50 ${
-                  isDropdownActive([...workingTogetherItems, { path: '/join' }]) || isDropdownOpen ? 'bg-emerald-50 text-emerald-800 font-bold' : 'text-gray-600'
+                className={`flex items-center gap-1.5 text-sm font-medium transition-colors hover:text-emerald-700 ${
+                  isDropdownActive([...workingTogetherItems, { path: '/join' }]) || isDropdownOpen ? 'text-emerald-700 font-bold' : 'text-gray-600'
                 }`}
               >
                 {content.nav.join}
@@ -185,14 +175,7 @@ const Navbar: React.FC = () => {
                       </NavLink>
                     ))}
                     <div className="border-t border-gray-50 mt-2 pt-2">
-                       <NavLink 
-                        to={langPath('/join')} 
-                        className={({ isActive }) => 
-                          `block px-4 py-3 text-[10px] font-black uppercase tracking-[0.2em] rounded-xl transition-all ${
-                            isActive ? 'bg-blue-50 text-blue-900' : 'text-gray-400 hover:text-blue-900 hover:bg-gray-50'
-                          }`
-                        }
-                       >
+                       <NavLink to={langPath('/join')} className="block px-4 py-3 text-[10px] font-black text-gray-400 uppercase tracking-[0.2em] hover:text-blue-900">
                           {content.nav.overview}
                        </NavLink>
                     </div>
@@ -204,14 +187,14 @@ const Navbar: React.FC = () => {
             {/* 7. Contact */}
             <NavLink
               to={langPath('/contact')}
-              className={`text-sm font-medium px-3 py-2 rounded-xl transition-all hover:text-emerald-700 hover:bg-gray-50 ${
-                isPathActive('/contact') ? 'bg-emerald-50 text-emerald-800 font-bold' : 'text-gray-600'
+              className={`text-sm font-medium transition-colors hover:text-emerald-700 ${
+                isPathActive('/contact') ? 'text-emerald-700 font-bold' : 'text-gray-600'
               }`}
             >
               {content.nav.contact}
             </NavLink>
             
-            <div className="flex items-center space-x-4 ml-2">
+            <div className="flex items-center space-x-4 ml-4">
               <button
                 onClick={toggleLanguage}
                 className="flex items-center space-x-2 px-3 py-1.5 rounded-full border border-gray-200 text-sm font-medium hover:bg-gray-50 transition-all"
@@ -222,11 +205,7 @@ const Navbar: React.FC = () => {
 
               <NavLink
                 to={langPath('/donate')}
-                className={({ isActive }) => 
-                  `px-6 py-2.5 rounded-full text-sm font-semibold transition-all shadow-md shadow-blue-900/10 ${
-                    isActive ? 'bg-blue-950 text-white ring-2 ring-blue-400' : 'bg-blue-900 text-white hover:bg-blue-800'
-                  }`
-                }
+                className="bg-blue-900 text-white px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-blue-800 transition-all shadow-md shadow-blue-900/10"
               >
                 {content.nav.donate}
               </NavLink>
@@ -258,35 +237,27 @@ const Navbar: React.FC = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-white border-b border-gray-100 overflow-y-auto max-h-[calc(100vh-5rem)]"
+            className="lg:hidden bg-white border-b border-gray-100 overflow-hidden"
           >
-            <div className="px-4 pt-2 pb-8 space-y-4">
+            <div className="px-4 pt-2 pb-6 space-y-4">
               {/* 1. Home */}
               <NavLink
                 to={langPath('/')}
                 onClick={() => setIsMenuOpen(false)}
-                className={`block text-lg font-bold py-2.5 px-3 rounded-xl transition-all ${
-                  isPathActive('/') ? 'bg-emerald-50 text-emerald-800 border-l-4 border-emerald-600 pl-2' : 'text-gray-700'
-                }`}
+                className="block text-lg font-medium text-gray-700 py-2 border-b border-gray-50"
               >
                 {content.nav.home}
               </NavLink>
 
               {/* 2. About */}
-              <div className="space-y-1.5 pt-2 border-t border-gray-50">
-                 <p className="text-[10px] font-black uppercase text-gray-400 tracking-widest px-3 mb-1">{content.nav.about}</p>
+              <div className="space-y-2 pt-2 border-t border-gray-50">
+                 <p className="text-[10px] font-black uppercase text-gray-400 tracking-widest px-1">{content.nav.about}</p>
                  {aboutItems.map((item) => (
                     <NavLink
                       key={item.path}
                       to={langPath(item.path)}
                       onClick={() => setIsMenuOpen(false)}
-                      className={({ isActive }) => 
-                        `block text-sm font-bold py-2 pl-4 pr-3 rounded-r-xl transition-all ${
-                          isActive 
-                            ? 'bg-blue-50 text-blue-900 border-l-4 border-blue-600 pl-3' 
-                            : 'text-gray-600 border-l-2 border-gray-100 hover:border-emerald-600 hover:bg-gray-50'
-                        }`
-                      }
+                      className="block text-sm font-bold text-gray-600 py-2 pl-4 border-l-2 border-gray-100 hover:border-emerald-600 transition-all"
                     >
                       {item.name}
                     </NavLink>
@@ -294,20 +265,14 @@ const Navbar: React.FC = () => {
               </div>
 
               {/* 3. Actions & Expertise */}
-              <div className="space-y-1.5 pt-2 border-t border-gray-50">
-                 <p className="text-[10px] font-black uppercase text-gray-400 tracking-widest px-3 mb-1">{content.nav.actions}</p>
+              <div className="space-y-2 pt-2 border-t border-gray-50">
+                 <p className="text-[10px] font-black uppercase text-gray-400 tracking-widest px-1">{content.nav.actions}</p>
                  {expertiseItems.map((item) => (
                     <NavLink
                       key={item.path}
                       to={langPath(item.path)}
                       onClick={() => setIsMenuOpen(false)}
-                      className={({ isActive }) => 
-                        `block text-sm font-bold py-2 pl-4 pr-3 rounded-r-xl transition-all ${
-                          isActive 
-                            ? 'bg-blue-50 text-blue-900 border-l-4 border-blue-600 pl-3' 
-                            : 'text-gray-600 border-l-2 border-gray-100 hover:border-emerald-600 hover:bg-gray-50'
-                        }`
-                      }
+                      className="block text-sm font-bold text-gray-600 py-2 pl-4 border-l-2 border-gray-100 hover:border-emerald-600 transition-all"
                     >
                       {item.name}
                     </NavLink>
@@ -318,9 +283,7 @@ const Navbar: React.FC = () => {
               <NavLink
                 to={langPath('/publications')}
                 onClick={() => setIsMenuOpen(false)}
-                className={`block text-lg font-bold py-2.5 px-3 rounded-xl transition-all ${
-                  isPathActive('/publications') ? 'bg-emerald-50 text-emerald-800 border-l-4 border-emerald-600 pl-2' : 'text-gray-700'
-                }`}
+                className="block text-lg font-medium text-gray-700 py-2 border-b border-gray-50"
               >
                 {content.nav.publications}
               </NavLink>
@@ -329,28 +292,20 @@ const Navbar: React.FC = () => {
               <NavLink
                 to={langPath('/partners')}
                 onClick={() => setIsMenuOpen(false)}
-                className={`block text-lg font-bold py-2.5 px-3 rounded-xl transition-all ${
-                  isPathActive('/partners') ? 'bg-emerald-50 text-emerald-800 border-l-4 border-emerald-600 pl-2' : 'text-gray-700'
-                }`}
+                className="block text-lg font-medium text-gray-700 py-2 border-b border-gray-50"
               >
                 {content.nav.partners}
               </NavLink>
 
               {/* 6. Join Us */}
-              <div className="space-y-1.5 pt-2 border-t border-gray-50">
-                 <p className="text-[10px] font-black uppercase text-gray-400 tracking-widest px-3 mb-1">{content.nav.join}</p>
+              <div className="space-y-2 pt-2 border-t border-gray-50">
+                 <p className="text-[10px] font-black uppercase text-gray-400 tracking-widest px-1">{content.nav.join}</p>
                  {workingTogetherItems.map((item) => (
                     <NavLink
                       key={item.path}
                       to={langPath(item.path)}
                       onClick={() => setIsMenuOpen(false)}
-                      className={({ isActive }) => 
-                        `block text-sm font-bold py-2 pl-4 pr-3 rounded-r-xl transition-all ${
-                          isActive 
-                            ? 'bg-blue-50 text-blue-900 border-l-4 border-blue-600 pl-3' 
-                            : 'text-gray-600 border-l-2 border-gray-100 hover:border-blue-900 hover:bg-gray-50'
-                        }`
-                      }
+                      className="block text-sm font-bold text-gray-600 py-2 pl-4 border-l-2 border-gray-100 hover:border-blue-900 transition-all"
                     >
                       {item.name}
                     </NavLink>
@@ -358,13 +313,7 @@ const Navbar: React.FC = () => {
                  <NavLink 
                     to={langPath('/join')} 
                     onClick={() => setIsMenuOpen(false)}
-                    className={({ isActive }) => 
-                      `block text-[10px] font-black uppercase tracking-[0.2em] pt-2 pb-2 pl-4 pr-3 rounded-r-xl transition-all ${
-                        isActive 
-                          ? 'bg-blue-50 text-blue-900 border-l-4 border-blue-600 pl-3' 
-                          : 'text-gray-400 hover:bg-gray-50'
-                      }`
-                    }
+                    className="block text-[10px] font-black text-gray-400 uppercase tracking-[0.2em] pt-2 pl-4"
                   >
                     {content.nav.overview}
                   </NavLink>
@@ -374,22 +323,15 @@ const Navbar: React.FC = () => {
               <NavLink
                 to={langPath('/contact')}
                 onClick={() => setIsMenuOpen(false)}
-                className={`block text-lg font-bold py-2.5 px-3 rounded-xl transition-all ${
-                  isPathActive('/contact') ? 'bg-emerald-50 text-emerald-800 border-l-4 border-emerald-600 pl-2' : 'text-gray-700'
-                }`}
+                className="block text-lg font-medium text-gray-700 py-2 border-b border-gray-50"
               >
                 {content.nav.contact}
               </NavLink>
 
-              {/* Donate Button */}
               <NavLink
                 to={langPath('/donate')}
                 onClick={() => setIsMenuOpen(false)}
-                className={({ isActive }) => 
-                  `block text-center py-4 rounded-2xl font-bold mt-6 shadow-md transition-all ${
-                    isActive ? 'bg-blue-950 text-white ring-2 ring-blue-400' : 'bg-blue-900 text-white hover:bg-blue-800'
-                  }`
-                }
+                className="block text-center bg-blue-900 text-white py-4 rounded-2xl font-bold mt-4"
               >
                 {content.nav.donate}
               </NavLink>
@@ -402,3 +344,4 @@ const Navbar: React.FC = () => {
 };
 
 export default Navbar;
+

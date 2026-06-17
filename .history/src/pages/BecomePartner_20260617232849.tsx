@@ -56,7 +56,7 @@ const BecomePartner: React.FC = () => {
                  <h2 className="text-sm lg:text-2xl font-black leading-tighter text-blue-100 uppercase tracking-tighter break-words hyphens-auto">
                     {t.collaborationTitle}
                  </h2>
-                 <p className="text-sm lg:text-lg text-blue-100/70 font-medium leading-tighter ">
+                 <p className="text-sm lg:text-xl text-blue-100/70 font-medium leading-tighter break-words hyphens-auto text-justify">
                     {t.guaranteesText}
                  </p>
               </div>

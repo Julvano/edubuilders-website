@@ -217,7 +217,7 @@ const ArticleCard: React.FC<{ article: typeof ARTICLES[0], lang: 'fr' | 'en', t:
         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
         referrerPolicy="no-referrer"
       />
-      <div className="absolute top-4 left-4 flex gap-2">
+      {/* <div className="absolute top-4 left-4 flex gap-2">
          <span className="px-3 py-1.5 bg-blue-600 text-white text-[10px] font-black uppercase rounded-lg shadow-lg shadow-blue-900/20">
             {article.category[lang]}
          </span>
@@ -225,7 +225,7 @@ const ArticleCard: React.FC<{ article: typeof ARTICLES[0], lang: 'fr' | 'en', t:
             <MapPin size={10} />
             {article.location[lang]}
          </span>
-      </div>
+      </div> */}
     </div>
     
     <div className="p-8 space-y-6 flex-grow flex flex-col">
@@ -244,7 +244,7 @@ const ArticleCard: React.FC<{ article: typeof ARTICLES[0], lang: 'fr' | 'en', t:
         {article.title[lang]}
       </h3>
 
-      <p className="text-sm text-gray-600 leading-tighter break-words hyphens-auto text-justify font-medium line-clamp-3">
+      <p className="text-sm text-gray-600 leading-relaxed font-medium line-clamp-3">
         {article.excerpt[lang]}
       </p>
 

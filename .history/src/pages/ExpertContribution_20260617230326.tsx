@@ -49,7 +49,7 @@ const ExpertContribution: React.FC = () => {
                  </div>
                  <div className="space-y-4">
                     <h3 className="text-md sm:text-2xl font-black text-amber-900 uppercase tracking-tight">{t.statusTitle}</h3>
-                    <p className="text-amber-900/70 font-medium leading-tighter break-words hyphens-auto text-justify">
+                    <p className="text-amber-900/70 font-medium leading-relaxed">
                       {t.statusText}
                     </p>
                  </div>

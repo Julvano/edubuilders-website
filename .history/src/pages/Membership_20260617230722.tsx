@@ -30,7 +30,7 @@ const Membership: React.FC = () => {
                 </div>
                 <h2 className="text-sm lg:text-2xl font-black text-blue-950 uppercase tracking-tight">{t.statutesTitle}</h2>
               </div>
-              <p className="text-gray-600 leading-tighter break-words hyphens-auto text-justify font-medium">
+              <p className="text-gray-600 leading-relaxed font-medium">
                 {t.statutesText}
               </p>
             </section>
@@ -74,7 +74,7 @@ const Membership: React.FC = () => {
                   {t.readyTitle}
                 </h2>
                 
-                <p className="text-blue-200 text-lg font-medium leading-tighter break-words hyphens-auto text-justify">
+                <p className="text-blue-200 text-lg font-medium leading-relaxed">
                   {content.join.membershipText}
                 </p>
 
@@ -87,7 +87,7 @@ const Membership: React.FC = () => {
 
                 <a 
                   href={`/edubuilders-website/${language}/contact?subject=adhesion`}
-                  className="inline-flex w-full bg-emerald-500 hover:bg-emerald-400 text-blue-950 font-black py-6 rounded-3xl transition-all  tracking-widest shadow-2xl shadow-emerald-500/30 items-center justify-center gap-3 group px-8"
+                  className="inline-flex w-full bg-emerald-500 hover:bg-emerald-400 text-blue-950 font-black py-6 rounded-3xl transition-all uppercase tracking-widest shadow-2xl shadow-emerald-500/30 items-center justify-center gap-3 group px-8"
                 >
                   <span className="text-sm">{content.join.membershipCTA}</span>
                   <motion.div

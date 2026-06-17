@@ -53,10 +53,10 @@ const BecomePartner: React.FC = () => {
                     <ShieldCheck size={24} />
                     {t.guaranteesTitle}
                  </div>
-                 <h2 className="text-sm lg:text-2xl font-black leading-tighter text-blue-100 uppercase tracking-tighter break-words hyphens-auto">
+                 <h2 className="text-sm lg:text-4xl font-black leading-tighter text-blue-100 uppercase tracking-tighter break-words hyphens-auto">
                     {t.collaborationTitle}
                  </h2>
-                 <p className="text-sm lg:text-lg text-blue-100/70 font-medium leading-tighter ">
+                 <p className="text-lg lg:text-xl text-blue-100/70 font-medium leading-tighter break-words hyphens-auto text-justify">
                     {t.guaranteesText}
                  </p>
               </div>

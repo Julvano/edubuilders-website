@@ -49,14 +49,14 @@ const BecomePartner: React.FC = () => {
            <div className="absolute bottom-0 right-0 w-1/2 h-full bg-emerald-600/10 skew-x-12 transform translate-x-1/4" />
            <div className="max-w-3xl relative z-10 space-y-12">
               <div className="space-y-6">
-                 <div className="flex items-center gap-4 text-emerald-400 font-bold uppercase tracking-[0.3em] text-sm">
+                 <div className="flex items-center gap-4 text-emerald-200 font-bold uppercase tracking-[0.3em] text-sm">
                     <ShieldCheck size={24} />
                     {t.guaranteesTitle}
                  </div>
-                 <h2 className="text-sm lg:text-2xl font-black leading-tighter text-blue-100 uppercase tracking-tighter break-words hyphens-auto">
+                 <h2 className="text-xl lg:text-4xl font-black leading-tight">
                     {t.collaborationTitle}
                  </h2>
-                 <p className="text-sm lg:text-lg text-blue-100/70 font-medium leading-tighter ">
+                 <p className="text-lg lg:text-xl text-blue-100/70 font-medium leading-tighter break-words hyphens-auto text-justify">
                     {t.guaranteesText}
                  </p>
               </div>

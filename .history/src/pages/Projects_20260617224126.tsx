@@ -103,7 +103,7 @@ const Projects: React.FC = () => {
               {t.title}
             </h1>
             <div className="w-20 h-1 bg-blue-500 mx-auto rounded-full" />
-            <p className="text-sm sm:text-lg text-emerald-100 max-w-2xl mx-auto font-medium">
+            <p className="text-sm sm:text-lg text-emerald-100 max-w-2xl mx-auto font-medium leading-tighter break-words hyphens-auto text-justify">
               {t.subtitle}
             </p>
           </motion.div>
@@ -246,7 +246,7 @@ const Projects: React.FC = () => {
                       <h3 className="text-xl font-black text-blue-950 leading-tight group-hover:text-emerald-600 transition-colors">
                         {project.title}
                       </h3>
-                      <p className="text-gray-600 font-medium leading-relaxed line-clamp-3 ">
+                      <p className="text-gray-600 font-medium leading-relaxed line-clamp-3">
                         {project.excerpt}
                       </p>
                     </div>
