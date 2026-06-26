@@ -181,13 +181,13 @@ const Contact: React.FC = () => {
                           <div className="space-y-2">
                             <div className="flex justify-between items-center">
                               <label className="text-xs font-bold text-gray-400 uppercase tracking-widest">{content.contact.labelEmail}</label>
-                              <span className="text-xs text-gray-400 font-medium">{formData.email.length} / 120</span>
+                              <span className="text-xs text-gray-400 font-medium">{formData.email.length} / 150</span>
                             </div>
                             <input 
                               required
                               type="email" 
                               name="email"
-                              maxLength={120}
+                              maxLength={150}
                               value={formData.email}
                               onChange={handleChange}
                               className="w-full bg-white border-2 border-gray-200 rounded-2xl px-6 py-4 focus:border-blue-900 outline-none transition-all font-medium text-blue-950" 

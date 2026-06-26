@@ -1,19 +1,18 @@
-import React, { useState } from 'react';
+
+import React from 'react';
 import { useLanguage } from './LanguageContext';
 import { Mail, Phone, MapPin, Linkedin, Twitter, Facebook } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Footer: React.FC = () => {
   const { content, langPath } = useLanguage();
-  // État pour gérer la valeur de l'email et le décompte des caractères
-  const [email, setEmail] = useState('');
-  const maxLength = 120;
 
   return (
     <footer className="bg-gray-950 text-gray-300 py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           <div className="space-y-6">
+            {/* <h3 className="text-white text-xl font-bold">EduBuilders <span className="text-emerald-500">Institute</span></h3> */}
             <img 
               src={`${import.meta.env.BASE_URL}assets/images/logo.png`} 
               alt="Logo eduBuilders institute"
@@ -61,27 +60,19 @@ const Footer: React.FC = () => {
 
           <div className="space-y-6">
             <h4 className="text-white text-sm font-bold uppercase tracking-widest">Newsletter</h4>
-            <p className="text-sm opacity-70">{content.footer.newsletter}</p>
-            
-            <div className="space-y-1">
-              <div className="flex">
+            <p className="text-sm opacity-70">Restez informé de nos dernières innovations pédagogiques.</p>
+            <div className="flex">
+              <form>  
                 <input 
                   type="email" 
                   placeholder="Email" 
-                  maxLength={maxLength}
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className="bg-gray-900 border-none rounded-l-lg px-4 py-2 w-full focus:ring-1 focus:ring-emerald-500 outline-none text-sm"
+                  className="bg-gray-900 border-none rounded-l-lg px-4 py-2 w-full focus:ring-1 focus:ring-emerald-500 outline-none"
                 />
-                <button className="bg-emerald-600 hover:bg-emerald-500 text-white px-4 py-2 rounded-r-lg transition-colors font-medium">
+                <button className="bg-emerald-600 hover:bg-emerald-500 text-white px-4 py-2 rounded-r-lg transition-colors">
                   OK
                 </button>
-              </div>
+              </form>
               
-              {/* Compteur de caractères fluide */}
-              <div className="text-right text-[10px] text-gray-500 tracking-wide pr-1">
-                {email.length} / {maxLength}
-              </div>
             </div>
           </div>
         </div>
@@ -98,5 +89,6 @@ const Footer: React.FC = () => {
     </footer>
   );
 };
+
 
 export default Footer;

@@ -61,7 +61,7 @@ const Footer: React.FC = () => {
 
           <div className="space-y-6">
             <h4 className="text-white text-sm font-bold uppercase tracking-widest">Newsletter</h4>
-            <p className="text-sm opacity-70">{content.footer.newsletter}</p>
+            <p className="text-sm opacity-70">Restez informé de nos dernières innovations pédagogiques.</p>
             
             <div className="space-y-1">
               <div className="flex">

@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { useLanguage } from '../components/LanguageContext';
 import { Mail, Phone, MapPin, Send, CheckCircle2, RefreshCw, Sparkles, FileText } from 'lucide-react';
@@ -159,56 +160,41 @@ const Contact: React.FC = () => {
                       transition={{ duration: 0.3 }}
                       className="space-y-8"
                     >
-                      <h2 className="text-xl lg:text-2xl font-black text-blue-950">{content.contact.formTitle}</h2>
+                      <h2 className="text-3xl font-black text-blue-950">{content.contact.formTitle}</h2>
                       
                       <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-8">
                           <div className="space-y-2">
-                            <div className="flex justify-between items-center">
-                              <label className="text-xs font-bold text-gray-400 uppercase tracking-widest">{content.contact.labelIdentity}</label>
-                              <span className="text-xs text-gray-400 font-medium">{formData.name.length} / 100</span>
-                            </div>
+                            <label className="text-xs font-bold text-gray-400 uppercase tracking-widest">{content.contact.labelIdentity}</label>
                             <input 
                               required
                               type="text" 
                               name="name"
-                              maxLength={100}
                               value={formData.name}
                               onChange={handleChange}
                               className="w-full bg-white border-2 border-gray-200 rounded-2xl px-6 py-4 focus:border-blue-900 outline-none transition-all font-medium text-blue-950" 
                             />
                           </div>
-                          
                           <div className="space-y-2">
-                            <div className="flex justify-between items-center">
-                              <label className="text-xs font-bold text-gray-400 uppercase tracking-widest">{content.contact.labelEmail}</label>
-                              <span className="text-xs text-gray-400 font-medium">{formData.email.length} / 120</span>
-                            </div>
+                            <label className="text-xs font-bold text-gray-400 uppercase tracking-widest">{content.contact.labelEmail}</label>
                             <input 
                               required
                               type="email" 
                               name="email"
-                              maxLength={120}
                               value={formData.email}
                               onChange={handleChange}
                               className="w-full bg-white border-2 border-gray-200 rounded-2xl px-6 py-4 focus:border-blue-900 outline-none transition-all font-medium text-blue-950" 
                             />
                           </div>
-                          
                           <div className="space-y-2">
-                            <div className="flex justify-between items-center">
-                              <label className="text-xs font-bold text-gray-400 uppercase tracking-widest">{content.contact.labelPhone}</label>
-                              <span className="text-xs text-gray-400 font-medium">{formData.phone.length} / 50</span>
-                            </div>
+                            <label className="text-xs font-bold text-gray-400 uppercase tracking-widest">{content.contact.labelPhone}</label>
                             <input 
                               type="tel" 
                               name="phone"
-                              maxLength={50}
                               value={formData.phone}
                               onChange={handleChange}
                               className="w-full bg-white border-2 border-gray-200 rounded-2xl px-6 py-4 focus:border-blue-900 outline-none transition-all font-medium text-blue-950" 
                             />
                           </div>
-                          
                           <div className="space-y-2">
                             <label className="text-xs font-bold text-gray-400 uppercase tracking-widest">{content.contact.labelSubject}</label>
                             <div className="relative">
@@ -232,16 +218,11 @@ const Contact: React.FC = () => {
                               </div>
                             </div>
                           </div>
-                          
                           <div className="md:col-span-2 space-y-2">
-                            <div className="flex justify-between items-center">
-                              <label className="text-xs font-bold text-gray-400 uppercase tracking-widest">{content.contact.labelMessage}</label>
-                              <span className="text-xs text-gray-400 font-medium">{formData.message.length} / 500</span>
-                            </div>
+                            <label className="text-xs font-bold text-gray-400 uppercase tracking-widest">{content.contact.labelMessage}</label>
                             <textarea 
                               required
                               name="message"
-                              maxLength={500}
                               value={formData.message}
                               onChange={handleChange}
                               className="w-full bg-white border-2 border-gray-200 rounded-2xl px-6 py-4 focus:border-blue-900 outline-none transition-all h-48 resize-none font-medium text-blue-950" 
@@ -288,17 +269,17 @@ const Contact: React.FC = () => {
                           </div>
                         </div>
                         <div className="flex items-center gap-1.5 text-emerald-600 font-bold tracking-widest text-xs uppercase bg-emerald-500/10 px-4 py-1.5 rounded-full">
-                          <Sparkles size={10} />
+                          <Sparkles size={12} />
                           {content.contact.success}
                         </div>
                       </div>
 
                       {/* Message Body */}
                       <div className="space-y-3 max-w-xl mx-auto">
-                        <h2 className="text-xl lg:text-2xl font-black text-blue-950 uppercase tracking-tighter leading-tight">
+                        <h2 className="text-3xl font-black text-blue-950 uppercase tracking-tighter leading-tight">
                           {content.contact.thankYouTitle}
                         </h2>
-                        <p className="text-gray-600 text-base leading-tighter break-words hyphens-auto text-justify">
+                        <p className="text-gray-600 text-base leading-relaxed">
                           {content.contact.thankYouMessage}
                         </p>
                       </div>
@@ -343,12 +324,12 @@ const Contact: React.FC = () => {
                           </div>
                         </div>
 
-                        <div className="space-y-2 border-t border-gray-100 pt-4">
+                        {/* <div className="space-y-2 border-t border-gray-100 pt-4">
                           <span className="text-gray-400 text-xs uppercase tracking-widest block">{content.contact.labelMessage.replace('*', '').trim()}</span>
-                          <p className="text-gray-600 bg-gray-50 p-4 rounded-xl text-sm italic leading-tighter break-words hyphens-auto text-justify border border-gray-100/60 max-h-32 overflow-y-auto whitespace-pre-wrap">
+                          <p className="text-gray-600 bg-gray-50 p-4 rounded-xl text-sm italic leading-relaxed border border-gray-100/60 max-h-32 overflow-y-auto whitespace-pre-wrap">
                             "{receiptData.message}"
                           </p>
-                        </div>
+                        </div> */}
                       </div>
 
                       {/* Actions */}

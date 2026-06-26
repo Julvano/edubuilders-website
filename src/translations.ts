@@ -178,6 +178,19 @@ export interface Content {
     quickTitle: string;
     quickText: string;
     thankYou: string;
+    formLabelCurrency: string;
+    thankYouTitle: string;
+    thankYouMessage: string;
+    thankYouSub: string;
+    thankYouSubAnonymous: string;
+    backHome: string;
+    newDonate: string;
+    recapSubtitle: string;
+    recapTitle: string;
+    recapPaiement: string;
+    recapAmount: string;
+    recapAnonymous: string;
+    recapDonnator: string;
   };
   contact: {
     title: string;
@@ -204,6 +217,11 @@ export interface Content {
     success: string;
     expertNote: string;
     mapPlaceholder: string;
+    thankYouTitle: string;
+    thankYouMessage: string;
+    newContact: string;
+    recapTitle: string;
+    recapSubject: string;
   };
   publications: {
     title: string;
@@ -297,6 +315,7 @@ export interface Content {
   footer: {
     legal: string;
     rights: string;
+    newsletter: string;
   };
   loader: {
     slogan: string;
@@ -553,7 +572,20 @@ export const translations: Record<Language, Content> = {
       secureText: "Transparence totale sur l'utilisation de vos contributions.",
       quickTitle: "Action rapide",
       quickText: "Déploiement immédiat de ressources pédagogiques critiques.",
-      thankYou: "Merci pour votre générosité ! (Simulation)"
+      thankYou: "Merci pour votre générosité ! (Simulation)",
+      formLabelCurrency: "Devise",
+      thankYouTitle: "Merci infiniment !",
+      thankYouMessage: "Votre don de {amount} {currency} a bien été simulé et enregistré avec succès. Votre générosité contribue directement à la transformation de l'éducation en Afrique de l'Ouest.",
+      thankYouSub: "Un reçu de confirmation de don a été envoyé à l'adresse {email}.",
+      thankYouSubAnonymous: "Puisque vous avez choisi de faire un don anonyme, aucun reçu de confirmation nominatif n'a été émis, mais votre soutien est d'une valeur inestimable.",
+      backHome: "Retour à l'accueil",
+      newDonate: "Faire un autre don",
+      recapSubtitle: "Don Enregistré",
+      recapTitle: "Récapitulatif",
+      recapPaiement: "Paiement Sécurisé",
+      recapAmount: "Montant",
+      recapAnonymous: "Anonyme",
+      recapDonnator: "Donateur"
     },
     contact: {
       title: "Nous contacter",
@@ -579,7 +611,12 @@ export const translations: Record<Language, Content> = {
       submit: "Envoyer le message",
       success: "Votre message a été envoyé avec succès !",
       expertNote: "Vous souhaitez contribuer en tant qu'expert ? Précisez votre domaine d'intervention dans l'objet de votre message.",
-      mapPlaceholder: "Emplacement Carte Google Maps"
+      mapPlaceholder: "Emplacement Carte Google Maps",
+      thankYouTitle: "Message Bien Reçu !",
+      thankYouMessage: "Merci pour votre démarche ! Nous accusons bonne réception de votre demande d'informations ou proposition. Une notification de confirmation récapitulative a été générée.",
+      newContact: "Envoyer un autre message",
+      recapTitle: "Détails de l'envoi",
+      recapSubject: "Objet"
     },
     publications: {
       title: "Publications & Ressources",
@@ -677,7 +714,8 @@ export const translations: Record<Language, Content> = {
     },
     footer: {
       legal: "eduBuilders Institute - Organisation régie par la Loi N° 2025-19 du Bénin.",
-      rights: "Tous droits réservés"
+      rights: "Tous droits réservés",
+      newsletter: "Restez informé de nos dernières innovations pédagogiques."
     },
     loader: {
       slogan: "L'éducation de qualité commence par la coopération",
@@ -932,7 +970,20 @@ export const translations: Record<Language, Content> = {
       secureText: "Total transparency in the use of your contributions.",
       quickTitle: "Quick Action",
       quickText: "Immediate deployment of critical pedagogical resources.",
-      thankYou: "Thank you for your generosity! (Simulated)"
+      thankYou: "Thank you for your generosity! (Simulated)",
+      formLabelCurrency: "Currency",
+      thankYouTitle: "Thank you so much!",
+      thankYouMessage: "Your donation of {amount} {currency} has been successfully simulated and registered. Your generosity directly contributes to the transformation of education in West Africa.",
+      thankYouSub: "A confirmation receipt has been sent to {email}.",
+      thankYouSubAnonymous: "Since you chose to make an anonymous donation, no personalized confirmation receipt has been issued, but your support is of invaluable significance.",
+      backHome: "Back to Home",
+      newDonate: "Make another donation",
+      recapSubtitle: "Donation Received",
+      recapTitle: "Summary",
+      recapPaiement: "Secure Payment",
+      recapAmount: "Amount",
+      recapAnonymous: "Anonymous",
+      recapDonnator: "Donor"
     },
     contact: {
       title: "Contact Us",
@@ -958,7 +1009,12 @@ export const translations: Record<Language, Content> = {
       submit: "Send Message",
       success: "Your message has been sent successfully!",
       expertNote: "Would you like to contribute as an expert? Specify your area of expertise in the message subject.",
-      mapPlaceholder: "Google Maps Location"
+      mapPlaceholder: "Google Maps Location",
+      thankYouTitle: "Message Received!",
+      thankYouMessage: "Thank you for getting in touch! We acknowledge receipt of your message. A confirmation notification has been successfully generated.",
+      newContact: "Send another message",
+      recapTitle: "Sent Details",
+      recapSubject: "Subject"
     },
     publications: {
       title: "Publications & Resources",
@@ -1056,7 +1112,8 @@ export const translations: Record<Language, Content> = {
     },
     footer: {
       legal: "eduBuilders Institute - Governed by Law No. 2025-19 of Benin.",
-      rights: "All rights reserved"
+      rights: "All rights reserved",
+      newsletter: "Stay informed about our latest pedagogical innovations."
     },
     loader: {
       slogan: "Quality education starts with cooperation",

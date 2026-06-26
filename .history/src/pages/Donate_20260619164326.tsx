@@ -91,19 +91,11 @@ const Donate: React.FC = () => {
                     {/* Full Name input */}
                     <div className="space-y-1.5">
                       <label className="text-xs font-bold text-blue-200 uppercase tracking-widest flex justify-between">
-                        <span className="flex gap-1">
-                          {content.donate.formLabelName}
-                          {!formData.anonymous && <span className="text-emerald-400">*</span>}
-                        </span>
-                        {!formData.anonymous && (
-                          <span className="text-white/40 font-mono normal-case tracking-normal">
-                            {formData.name.length}/100
-                          </span>
-                        )}
+                        <span>{content.donate.formLabelName}</span>
+                        {!formData.anonymous && <span className="text-emerald-400">*</span>}
                       </label>
                       <input 
                         type="text" 
-                        maxLength={100}
                         required={!formData.anonymous}
                         disabled={formData.anonymous}
                         className={`w-full bg-white/10 border border-white/20 rounded-2xl px-6 py-4 text-white placeholder-white/30 focus:bg-white/20 focus:border-white/40 outline-none transition-all ${
@@ -118,19 +110,11 @@ const Donate: React.FC = () => {
                     {/* Email input */}
                     <div className="space-y-1.5">
                       <label className="text-xs font-bold text-blue-200 uppercase tracking-widest flex justify-between">
-                        <span className="flex gap-1">
-                          {content.donate.formLabelEmail}
-                          {!formData.anonymous && <span className="text-emerald-400">*</span>}
-                        </span>
-                        {!formData.anonymous && (
-                          <span className="text-white/40 font-mono normal-case tracking-normal">
-                            {formData.email.length}/120
-                          </span>
-                        )}
+                        <span>{content.donate.formLabelEmail}</span>
+                        {!formData.anonymous && <span className="text-emerald-400">*</span>}
                       </label>
                       <input 
                         type="email" 
-                        maxLength={120}
                         required={!formData.anonymous}
                         disabled={formData.anonymous}
                         className={`w-full bg-white/10 border border-white/20 rounded-2xl px-6 py-4 text-white placeholder-white/30 focus:bg-white/20 focus:border-white/40 outline-none transition-all ${
@@ -147,7 +131,8 @@ const Donate: React.FC = () => {
                       {/* Amount */}
                       <div className="space-y-1.5 flex-1">
                         <label className="text-xs font-bold text-blue-200 uppercase tracking-widest flex justify-between">
-                          <span>{content.donate.formLabelAmount} <span className="text-emerald-400">*</span></span>
+                          <span>{content.donate.formLabelAmount}</span>
+                          <span className="text-emerald-400">*</span>
                         </label>
                         <input 
                           type="number" 
@@ -163,7 +148,8 @@ const Donate: React.FC = () => {
                       {/* Currency */}
                       <div className="space-y-1.5 w-32 sm:w-36">
                         <label className="text-xs font-bold text-blue-200 uppercase tracking-widest flex justify-between">
-                          <span>{content.donate.formLabelCurrency} <span className="text-emerald-400">*</span></span>
+                          <span>{content.donate.formLabelCurrency}</span>
+                          <span className="text-emerald-400">*</span>
                         </label>
                         <div className="relative">
                           <select 
@@ -205,22 +191,8 @@ const Donate: React.FC = () => {
 
                     {/* Optional Message */}
                     <div className="space-y-1.5">
-                      <div className="flex justify-between items-center">
-                        <label className="text-xs font-bold text-blue-200 uppercase tracking-widest">
-                          {content.donate.formLabelMessage}
-                        </label>
-                        <span className={`text-xs font-mono transition-colors ${
-                          formData.message.length > 450 
-                            ? 'text-rose-400 font-bold' 
-                            : formData.message.length > 350 
-                            ? 'text-amber-400' 
-                            : 'text-white/40'
-                        }`}>
-                          {formData.message.length}/500
-                        </span>
-                      </div>
+                      <label className="text-xs font-bold text-blue-200 uppercase tracking-widest">{content.donate.formLabelMessage}</label>
                       <textarea 
-                        maxLength={500}
                         className="w-full bg-white/10 border border-white/20 rounded-2xl px-6 py-4 text-white placeholder-white/30 focus:bg-white/20 focus:border-white/40 outline-none transition-all h-28 resize-none"
                         placeholder="..."
                         value={formData.message}
